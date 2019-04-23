@@ -1,9 +1,11 @@
 # HDP & HDF Labs: Real-time sentiment analysis with NiFi, Kafka, Druid, Zeppelin and Superset
 
 
-## Prerequisite
+## Pre-requisites
 
 **Although this AMI is not public and is available for Cloudera workhops only, the steps can be reproduced in your own environment**
+
+**This cloud accounts required for this workshop would be provided by Cloudera during the session.**
 
 - Launch AWS AMI **ami-08820f3fb1e5a37a4** with **m5d.4xlarge** instance type
 - Keep default storage (300GB SSD)
@@ -13,6 +15,7 @@
 - Choose an existing or create a new key pair
 
 ## Content
+### Section 1
 
 * [Lab 1 - Accessing the sandbox](#accessing-the-sandbox)
 * [Lab 2 - Stream data using NiFi](#stream-data-using-nifi)
@@ -20,7 +23,9 @@
 * [Lab 4 - Explore Hive, Druid and Zeppelin](#explore-hive-druid-and-zeppelin)
 * [Lab 5 - Stream enhanced data into Hive using NiFi](#stream-enhanced-data-into-hive-using-nifi)
 * [Lab 6 - Create live dashboard with Superset](#create-live-dashboard-with-superset)
-* [Lab 7 - Collect syslog data using MiNiFi and EFM](#collect-syslog-data-using-minifi-and-efm)
+
+### Section 2
+* [Lab 1 - Collect syslog data using MiNiFi and EFM](#collect-syslog-data-using-minifi-and-efm)
 
 ## Accessing the sandbox
 
@@ -42,26 +47,28 @@ Open a web browser and go to the following url
 
 ```http://demo.cloudera.com:8080/```
 
-Log in with the following credential
+This will launch Ambari. Log in with the following credential
 
 Username: admin
 Password: admin
 
-If services are not started, start all services
+You will see a list of Hadoop components running on your node on the left side of the page. If services are not started, start all services
 
 ![Image of Ambari Start Services](images/start_services.png)
 
 It can take up to 18 minutes...
 
+**They should all show green (ie started) status. If not, start them by Ambari via 'Service Actions' menu for that service**
+
 ![Image of Ambari Starting Services](images/starting_services.png)
 
 ### SSH to the sandbox
 
-Copy and paste the content of [ppk](keys/hdp-workshop.ppk) for Windows or [pem](keys/hdp-workshop.pem) for Mac OS X
+Copy and paste the content of [ppk](keys/cldr-sg-partners.ppk) for Windows or [pem](keys/cldr-sg-partners.pem) for Mac OS X
 
 On Mac use the terminal to SSH
 
-For Mac users, don't forget to ```chmod 400 /path/to/hdp-workshop.pem``` before ssh'ing
+For Mac users, don't forget to ```chmod 400 /path/to/cldr-sg-partners.pem``` before ssh'ing
 
 ![Image of Mac terminal ssh](images/mac_terminal_ssh.png)
 
